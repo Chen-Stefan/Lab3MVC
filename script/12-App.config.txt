@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<configuration>
+    <appSettings>
+        <add key="endpoint" value="https://sweedencentralmze.openai.azure.com/" />
+        <add key="key" value="6c62b0b787fe495eb7de95716abc00a2" />
+        <add key="engine" value="gpt-35-turbo" />
+    </appSettings>
+</configuration>

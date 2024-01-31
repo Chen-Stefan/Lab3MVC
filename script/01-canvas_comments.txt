@@ -1,0 +1,8 @@
+// get context for canvas with id="canvas"
+
+// blue background
+
+// draw ice cream cone which will later have a scoop added
+
+// draw scoop of ice cream
+

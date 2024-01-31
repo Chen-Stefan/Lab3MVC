@@ -1,0 +1,4 @@
+dotnet new console -n OpenAiDirect
+cd OpenAiDirect
+dotnet add package OpenAI
+dotnet add package System.Configuration.ConfigurationManager

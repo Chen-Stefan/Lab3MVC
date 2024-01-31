@@ -1,0 +1,41 @@
+using System.Configuration;
+using Azure;
+using Azure.AI.OpenAI;
+
+string endpoint = ConfigurationManager.AppSettings["endpoint"]!;
+string key = ConfigurationManager.AppSettings["key"]!;
+string engine = ConfigurationManager.AppSettings["engine"]!;
+
+var client = new OpenAIClient(new Uri(endpoint), new AzureKeyCredential(key));
+
+try
+{
+    string prompt = "Once upon a time";
+    Console.WriteLine("Starting prompt: " + prompt);
+
+    while (true)
+    {
+        CompletionsOptions completionsOptions = new()
+        {
+            DeploymentName = engine,
+            Prompts = { prompt },
+        };
+
+        Response<Completions> completionResult = client.GetCompletions(completionsOptions);
+        string generatedText = completionResult.Value.Choices[0].Text;
+        Console.WriteLine($"Chatbot: {generatedText}\n");
+
+        Console.WriteLine("\n **** Press Enter to continue or type 'quit' to exit");
+        string input = Console.ReadLine()!;
+        if (input == "quit")
+            break;
+        else
+            prompt = prompt + " " + generatedText;
+
+    }
+
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}

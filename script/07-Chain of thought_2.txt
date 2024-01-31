@@ -1,0 +1,5 @@
+Lisa has 7 apples, throws 1 apple, gives 4 apples to Bart and Bart gives one back: 
+7 -1 = 6 
+6 -4 = 2 
+2 +1 = 3
+Alice has 5 apples, throws 3 apples, gives 2 to Bob and Bob gives one back, how many apples does Alice have?

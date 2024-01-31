@@ -1,0 +1,4 @@
+dotnet new console -n OpenAiAzure
+cd OpenAiAzure
+dotnet add package Azure.AI.OpenAI --prerelease
+dotnet add package System.Configuration.ConfigurationManager
